@@ -1,75 +1,102 @@
-body{
-    font-family:Arial;
-	background:darkgrey;
-	margin:auto;
-	text-align:center;
-}
-.wrapper{
-	background:darkgrey;
-	height:100%;
-	width:1000px;
-	margin:auto;
-	text-align:center;
+body {
+    font-family: Arial, sans-serif;
+    background: darkgrey;
+    margin: 0;
+    text-align: center;
 }
 
-#header{
-	background:black;
-	height:90px;
-	width:100%;
-	float:left;
-}
-#navbar{
-	background:black;
-	color:white;
-	height:40px;
-	width:100%;
-	float:left;
-}
-#navbar a{
-	color:white;
-    background:#8b0000;
+.wrapper {
+    background: darkgrey;
+    width: 1000px;
+    margin: auto;
+    text-align: center;
 }
 
-#navbar a:hover{
-    color:black;
-    background:white;
+#header {
+    background: black;
+    height: 90px;
+    width: 100%;
+    float: left;
 }
 
-#entry{
-	width:800px;
-	height:100px;
+#navbar {
+    background: black;
+    color: white;
+    height: 40px;
+    width: 100%;
+    float: left;
 }
 
-#left{
-	width:200px;
-	float:left;
-	height:900px;
-	background:black;
-	color:white;
+#navbar a {
+    color: white;
+    background: #8b0000;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
 }
 
-#left a{
-    color:white;
-    background:#8b0000;
+#navbar a:hover {
+    color: black;
+    background: white;
 }
 
-#left a:hover{
-    color:black;
-    background:white;
+#entry {
+    width: 800px;
+    min-height: 100px;
+    margin: 20px auto; /* Center the entry area */
+    padding: 10px;
+    background: white;
+    border-radius: 5px; /* Rounded corners for better aesthetics */
 }
 
-#content{
-	height:900px;
-	width:800px;
-	float:left;
-	background:white;
-	color:black;
+#left {
+    width: 200px;
+    float: left;
+    height: 900px;
+    background: black;
+    color: white;
+    padding: 10px; /* Added padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-#footer{
-	color:white;
-	height:31px;
-	width:100%;
-	float:left;
-	background:black;
+#left a {
+    color: white;
+    background: #8b0000;
+    display: block; /* Make the links block-level for full width */
+    margin-bottom: 5px; /* Space between links */
+    padding: 10px; /* Padding for links */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text in links */
+}
+
+#left a:hover {
+    color: black;
+    background: white;
+}
+
+#content {
+    height: 900px;
+    width: 800px;
+    float: left;
+    background: white;
+    color: black;
+    padding: 20px; /* Padding for content area */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.product {
+    margin: 10px 0; /* Space between products */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for product boxes */
+    border-radius: 5px; /* Rounded corners for product boxes */
+}
+
+#footer {
+    color: white;
+    height: 31px;
+    width: 100%;
+    float: left;
+    background: black;
+    text-align: center; /* Center footer content */
+    line-height: 31px; /* Center text vertically */
 }

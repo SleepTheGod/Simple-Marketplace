@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <title>Marketplace</title>
+</head>
+<body>
+<div class="wrapper">
+    <div id="header">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+    <nav id="navbar">
+        <a href="index.html?page=market">Marketplace</a>
+        <a href="index.html?page=orders&action=check">Check Orders</a>
+        <a href="index.html?page=profile&action=login">Login</a>
+        <a href="index.html?page=profile&action=register">Register Account</a>
+        <a href="index.html?page=profile">Edit Profile</a>
+        <a href="index.html">View your Orders</a>
+        <a href="index.html?page=profile&action=logout">Logout</a>
+    </nav>
+
+    <aside id="left">
+        <div class="category-buttons">
+            <a class="Button" href="index.html?page=market&category=AMPHETAMINE">Amphetamine</a><br>
+            <a class="Button" href="index.html?page=market&category=BARBITURATE">Barbiturates</a><br>
+            <a class="Button" href="index.html?page=market&category=BENZODIAZEPINE">Benzos</a><br>
+            <a class="Button" href="index.html?page=market&category=CANNABIS">Cannabis</a><br>
+            <a class="Button" href="index.html?page=market&category=COCAINE">Cocaine</a><br>
+            <a class="Button" href="index.html?page=market&category=DMT">Tryptamines</a><br>
+            <a class="Button" href="index.html?page=market&category=DRUG">Prescription</a><br>
+            <a class="Button" href="index.html?page=market&category=HEROINE">Heroine</a><br>
+            <a class="Button" href="index.html?page=market&category=LSD">Hallucinogen</a><br>
+            <a class="Button" href="index.html?page=market&category=METHAMPHETAMINE">Crystal</a><br>
+            <a class="Button" href="index.html?page=market&category=MDMA">MDMA</a><br>
+            <a class="Button" href="index.html?page=market&category=OPIATES">Opiates</a><br>
+            <a class="Button" href="index.html?page=market&category=SEEDS">Seeds</a><br>
+            <a class="Button" href="index.html?page=market&category=STEROID">Steroids</a><br>
+            <a class="Button" href="index.html?page=market&category=RESEARCH_CHEMICAL">Research</a>
+        </div>
+    </aside>
+
+    <main id="content">
+        <div id="entry">
+            <h2>Marketplace</h2>
+            <?php if (!empty($products)) { ?>
+                <?php foreach ($products as $product) { ?>
+                    <div class="product">
+                        <h3><?php echo $product['name']; ?></h3>
+                        <p>Price: $<?php echo number_format($product['price'], 2); ?></p>
+                        <p>Rating: <?php echo $product['rating']; ?> 
+                            <img src="images/thumb_up.png" alt="Thumb Up"> 
+                            <?php echo $product['rating_down']; ?> 
+                            <img src="images/thumb_down.png" alt="Thumb Down">
+                        </p>
+                        <p>Put in Cart: <a href="index.html?page=orders&action=place&id=<?php echo $product['id']; ?>">Click to Shop</a></p>
+                    </div>
+                <?php } ?>
+            <?php } else { ?>
+                <p>No products available.</p>
+            <?php } ?>
+        </div>
+
+        <div id="entry">
+            <h2>Profile</h2>
+            <form action="index.html?page=profile" method="post">
+                <label for="pgp">Enter your Public Key:</label><br>
+                <textarea name="PGP" id="pgp"><?php echo isset($pgp) ? $pgp : ''; ?></textarea><br>
+                <input type="submit" name="CHANGE" value="Change PGP" />
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div id="footer-content">
+            <h5>Footer</h5>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
